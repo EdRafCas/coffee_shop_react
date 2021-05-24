@@ -6,7 +6,7 @@ const Header = () => {
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
-                  Hola
+                        Hola
                  </Contenedor>
            </ContenedorHeader>
        );
