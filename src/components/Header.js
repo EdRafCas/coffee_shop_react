@@ -33,7 +33,9 @@ const ContenedorHeader = styled.header`
 
 const Contenedor =styled.div`
       position:relative;
-      height:700px;      
+      height:700px;
+      width: 90%;
+      margin: auto;
 `
 
 const Menu =styled.nav`
@@ -56,36 +58,29 @@ const Textos = styled.div`
       flex-direction: row;
       width: 100%;
       color: #fff;
-      top: 50%;
-      margin-top: 48px;
+      margin-top: 50px;
       opacity: 1; 
-      border: 1px solid;
 `
 const Nombre =styled.h1`
       display:inline-block;
       font-size: 50px;
       font-weight: 600;
-      border: 1px solid;
       margin: auto;
 `
 
 const Eduardo = styled.h1`
       display: inline-block;
-      margin: 50 50;
       font-size: 50px;
       font-weight: 300;
       margin-left:20 px;
-      border: 1px solid;
+      margin-left: 20px
 `
 
 const Titulo = styled.h3`
-      display:block;
-      width:100%;
       font-weight: 300;
       font-size: 25px;
       font-style: italic;
       height:auto;
-      border: 1px solid;
       margin:0;
 `
 
