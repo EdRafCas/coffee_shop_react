@@ -35,7 +35,9 @@ const Contenedor =styled.div`
       position:relative;
       height:700px;
       width: 90%;
+      max-width: 1000px;
       margin: auto;
+      overflow: hidden;
 `
 
 const Menu =styled.nav`
@@ -50,6 +52,10 @@ const Enlaces = styled.a`
       margin: 40px 20px;
       text-decoration: none;
       position: relative; 
+
+      &:hover{
+            text-decoration: underline;
+      }
 
 `
 
