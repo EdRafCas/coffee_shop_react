@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import BgTextura from '../assets/bg-textura.png';
 import BgAcerca from '../assets/acerca-de.jpg';
+import PlatillosMenu from '../components/PlatillosMenu'
 
-const Main = () => {
+const Main = ({platillosMenu}) => {
       return ( 
             <ContenedorMain image={BgTextura}>
                   <AcercaDe>
-                        <Contenedor>
+                        <ContenedorAcercaDe>
                               <img  src={BgAcerca} alt={"sala de cafe"} />
-                        </Contenedor>
+                        </ContenedorAcercaDe>
                         <Cartel>
                               <h3>Acerca de</h3>
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sapiente deserunt distinctio ut. At porro ipsam molestias laboriosam ipsa impedit aliquid alias quasi. Excepturi, natus doloremque! Doloremque id similique eum.</p>
@@ -17,7 +18,14 @@ const Main = () => {
                   </AcercaDe>
 
                   <Menu>
-
+                        <TituloMenu> Menu</TituloMenu>
+                        <ContenedorExternoMenu>
+                              <ContenedorInternoMenu>
+                                    <PlatillosMenu 
+                                          platillosMenu={platillosMenu} 
+                                    />
+                              </ContenedorInternoMenu>    
+                        </ContenedorExternoMenu>
                   </Menu>
             </ContenedorMain>
        );
@@ -37,7 +45,7 @@ const AcercaDe=styled.section`
       
 `
 
-const Contenedor=styled.div`
+const ContenedorAcercaDe=styled.div`
       max-width: 1000px;
       margin: auto;
       overflow: visible;
@@ -73,7 +81,28 @@ const Cartel=styled.article`
 
 const Menu=styled.section`
       padding-top:570px;
+      width:90%;
+      max-width: 1000px;
+      margin: auto;
 `
+const TituloMenu= styled.h3`
+      font-size: 40px;
+      font-weight:300;
+      text-align: center;
+      margin-bottom: 40px;
 
+`
+const ContenedorExternoMenu= styled.div`
+      border: 1px solid #000;
+      background:transparent;
+      padding:10px;
+      overflow:hidden;
+`  
+const ContenedorInternoMenu= styled.div`
+      border: 1px solid #000;
+      background:transparent;
+      padding:10px;
+      overflow:hidden;
+`
 
 export default Main;

@@ -52,7 +52,6 @@ const Enlaces = styled.a`
       margin: 40px 20px;
       text-decoration: none;
       position: relative; 
-
       &:hover{
             text-decoration: underline;
       }
