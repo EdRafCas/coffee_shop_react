@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Main from './components/Main';
+import Galeria from './components/Galeria'
 
 function App() {
   
   const platillosMenu = [
-    {id:1, nombre: "plato 1", precio: "10$"},
-    {id:2, nombre: "plato 2", precio: "20$"},
-    {id:3, nombre: "plato 3", precio: "30$"},
-    {id:4, nombre: "plato 4", precio: "50$"},
+    {id:1, nombre: "Plato 1", precio: "10$"},
+    {id:2, nombre: "Plato 2", precio: "20$"},
+    {id:3, nombre: "Plato 3", precio: "30$"},
+    {id:4, nombre: "Plato 4", precio: "50$"},
   ];
 
 
@@ -19,6 +20,7 @@ function App() {
       <Main 
         platillosMenu={platillosMenu}
       />
+      <Galeria />
     </>
   );
 };

@@ -8,9 +8,9 @@ const PlatillosMenu = ({platillosMenu}) => {
                         {platillosMenu.map((platillo, index)=>{
                               return(
                                     <Platillo key={index}>
-                                          <p>{platillo.nombre}</p>
-                                          <p>Breve descripcion</p>
-                                          <p>{platillo.precio}</p>
+                                          <Nombre>{platillo.nombre}</Nombre>
+                                          <Precio>{platillo.precio}</Precio>
+                                          <Descripcion>Breve descripcion</Descripcion>
                                           <Boton>Agregar al carrito</Boton>
                                     </Platillo>
                               );
@@ -29,16 +29,32 @@ const ContenedorDePlatillos = styled.div`
       box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.1);
 `
 const Platillo =styled.div`
-      padding: 20px;
-      border: 1px solid #ebeef3;
-      border-radius: 5px;
+      margin-bottom:30px;
+      padding-bottom:20px;
+      border-bottom:4px dotted #000;
+      overflow:hidden;
       text-align: center;
-      
-      p {
-      margin-bottom: 10px;
-      font-weight: bold;
-      }
 `
+
+const Nombre = styled.p`
+      font-size:25px;
+      margin-bottom:15px;
+      float:left;
+`
+
+const Precio = styled.p`
+      font-size:20px;
+      margin-bottom:15px;
+      float:right;
+`
+const Descripcion= styled.p`
+      font-size:16px;
+      color:#676767;
+      margin-bottom:15px;
+      clear:both;
+`
+
+
 const Boton = styled.button`
     border: none;
     background: #1c85e8;
