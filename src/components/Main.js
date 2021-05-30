@@ -84,6 +84,7 @@ const Menu=styled.section`
       width:90%;
       max-width: 1000px;
       margin: auto;
+      padding-bottom: 50px;
 `
 const TituloMenu= styled.h3`
       font-size: 40px;

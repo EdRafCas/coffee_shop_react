@@ -4,6 +4,10 @@ import Imagen1 from '../assets/1.jpg';
 import Imagen2 from '../assets/2.jpg';
 import Imagen3 from '../assets/3.jpg';
 import Imagen4 from '../assets/4.jpg';
+import Imagen5 from '../assets/5.jpg';
+import Imagen6 from '../assets/6.jpg';
+import Imagen7 from '../assets/7.jpg';
+import Imagen8 from '../assets/8.jpg';
 
 
 const Galeria = () => {
@@ -20,6 +24,18 @@ const Galeria = () => {
                   </ContenedorFoto>
                   <ContenedorFoto>
                         <Foto src={Imagen4} alt={"imagen de muestra"}></Foto>
+                  </ContenedorFoto>
+                  <ContenedorFoto>
+                        <Foto src={Imagen5} alt={"imagen de muestra"}></Foto>
+                  </ContenedorFoto>
+                  <ContenedorFoto>
+                        <Foto src={Imagen6} alt={"imagen de muestra"}></Foto>
+                  </ContenedorFoto>
+                  <ContenedorFoto>
+                        <Foto src={Imagen7} alt={"imagen de muestra"}></Foto>
+                  </ContenedorFoto>
+                  <ContenedorFoto>
+                        <Foto src={Imagen8} alt={"imagen de muestra"}></Foto>
                   </ContenedorFoto>
             </ContenedorGaleria>
 
