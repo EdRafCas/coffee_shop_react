@@ -11,7 +11,7 @@ const Ubicacion = () => {
                               <p>Rosario, Santa fe</p>
                               <br/>
 
-                              <p>+541197551892</p>
+                              <p>+541197551892 </p>
                               <p>Correo de muestra</p>
                         </Direccion>
                         <Horarios>
