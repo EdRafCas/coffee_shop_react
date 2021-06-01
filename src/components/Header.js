@@ -59,11 +59,10 @@ const Enlaces = styled.a`
 `
 
 const Textos = styled.div`
-      display: block;
-      flex-direction: row;
       width: 100%;
       color: #fff;
-      margin-top: 50px;
+      position:absolute;
+      top: 50%;
       opacity: 1; 
 `
 const Nombre =styled.h1`

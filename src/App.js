@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import Header from './components/Header';
 import Main from './components/Main';
 import Galeria from './components/Galeria';
-import Ubicacion from './components/Ubicacion'
+import Ubicacion from './components/Ubicacion';
+import Mapa from './components/Mapa';
+import Footer from './components/Footer';
 
 function App() {
   
@@ -28,6 +30,8 @@ function App() {
       />
       <Galeria />
       <Ubicacion />
+      <Mapa/>
+      <Footer />
     </>
   );
 };
