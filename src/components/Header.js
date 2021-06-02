@@ -1,18 +1,19 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import styled from 'styled-components'
 import BgImage from '../assets/bg.jpg'
 
 const Header = () => {
+      
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
                         <Menu>
-                              <Enlaces>Acerca de </Enlaces>
+                              <Enlaces style={{top:-100}}>Acerca de </Enlaces>
                               <Enlaces>Menu </Enlaces>
                               <Enlaces>Galeria</Enlaces>
                               <Enlaces>Ubicacion</Enlaces>
                         </Menu>
-                        <Textos>
+                        <Textos >
                               <Nombre>Cafe</Nombre>
                               <Eduardo>Eduardo Castillo</Eduardo>
                               <Titulo>Lorem ipsum dolor sit amet consectetur adipisicing.</Titulo>
@@ -62,7 +63,7 @@ const Textos = styled.div`
       width: 100%;
       color: #fff;
       position:absolute;
-      top: 50%;
+      top: 50%;     
       opacity: 1; 
 `
 const Nombre =styled.h1`
