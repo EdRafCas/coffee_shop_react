@@ -1,9 +1,24 @@
-import React,{useEffect} from 'react';
+import React,{useState, useEffect} from 'react';
 import styled from 'styled-components'
 import BgImage from '../assets/bg.jpg'
 
 const Header = () => {
-      
+      const [offsetY, setOffsetY] =useState(0);
+      const handleScroll = () => setOffsetY(window.pageYOffset);
+
+      console.log(window.pageYOffset);
+      useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+            return() => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      let desplazamiento="";
+      if(offsetY>430){
+            desplazamiento = 430;
+      } else{
+            desplazamiento= offsetY;
+      }
+
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
@@ -13,8 +28,10 @@ const Header = () => {
                               <Enlaces>Galeria</Enlaces>
                               <Enlaces>Ubicacion</Enlaces>
                         </Menu>
-                        <Textos >
-                              <Nombre>Cafe</Nombre>
+                        <Textos 
+                              style={{transform:`translateY(${desplazamiento*0.5}px)`}} 
+                        >
+                              <Nombre>Café</Nombre>
                               <Eduardo>Eduardo Castillo</Eduardo>
                               <Titulo>Lorem ipsum dolor sit amet consectetur adipisicing.</Titulo>
                         </Textos>
