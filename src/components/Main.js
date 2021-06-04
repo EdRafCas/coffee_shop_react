@@ -1,17 +1,35 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import styled from 'styled-components';
 import BgTextura from '../assets/bg-textura.png';
 import BgAcerca from '../assets/acerca-de.jpg';
 import PlatillosMenu from '../components/PlatillosMenu'
 
 const Main = ({platillosMenu}) => {
+
+      const [offsetY, setOffsetY] =useState(0);
+      const handleScroll = () => setOffsetY(window.pageYOffset);
+
+      console.log(window.pageYOffset);
+      useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+            return() => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      let desplazamiento="";
+      if(offsetY>430){
+            desplazamiento = 430;
+      } else{
+            desplazamiento= offsetY;
+      }
+
+
       return ( 
             <ContenedorMain image={BgTextura}>
                   <AcercaDe>
                         <ContenedorAcercaDe>
                               <img  src={BgAcerca} alt={"sala de cafe"} />
                         </ContenedorAcercaDe>
-                        <Cartel>
+                        <Cartel style={{transform:`TranslateY(${-desplazamiento*0.6}px)`}}>
                               <h3>Acerca de</h3>
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sapiente deserunt distinctio ut. At porro ipsam molestias laboriosam ipsa impedit aliquid alias quasi. Excepturi, natus doloremque! Doloremque id similique eum.</p>
                         </Cartel>
