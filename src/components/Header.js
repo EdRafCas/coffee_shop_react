@@ -19,6 +19,15 @@ const Header = () => {
             desplazamiento= offsetY;
       }
 
+      let efectoEntrada="";
+
+      const [altura, setAltura]= useState(0);
+      const handleAltura = () => setAltura()
+
+      useEffect(()=>{
+            window.addEventListener('load', )
+      })
+
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
@@ -29,7 +38,7 @@ const Header = () => {
                               <Enlaces>Ubicacion</Enlaces>
                         </Menu>
                         <Textos 
-                              style={{transform:`translateY(${desplazamiento*0.5}px)`}} 
+                              style={{transform:`translateY(${desplazamiento*0.5}px)`, top:``}} 
                         >
                               <Nombre>Café</Nombre>
                               <Eduardo>Eduardo Castillo</Eduardo>
