@@ -18,21 +18,37 @@ const Header = () => {
       } else{
             desplazamiento= offsetY;
       }
-
-      let efectoEntrada="";
-
-      const [altura, setAltura]= useState(0);
-      const handleAltura = () => setAltura()
-
+      
+      let posicionesIniciales={divTexto:"-100", enlace:"-100"};
+      
+      const contador = () => setInterval(() => {
+            contadorFuncional();  
+      }, 10);
+      const contadorFuncional = () => {
+            if(posicionesIniciales.divTexto == 0){
+                  clearInterval(contador); 
+            } else{
+                  posicionesIniciales.divTexto++;
+                  setAltura(posicionesIniciales.divTexto); 
+            };     
+      };
+      
+      const [altura, setAltura]= useState(-100);
+      const handleAltura = () => setAltura(() =>{
+            contador()}
+      );
       useEffect(()=>{
-            window.addEventListener('load', )
-      })
+            window.addEventListener('load', handleAltura);
+            return() => window.removeEventListener("load", handleAltura);
+           
+      }, []);
 
+      
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
                         <Menu>
-                              <Enlaces style={{top:-100}}>Acerca de </Enlaces>
+                              <Enlaces style={{top:`${altura}px`}}>Acerca de </Enlaces>
                               <Enlaces>Menu </Enlaces>
                               <Enlaces>Galeria</Enlaces>
                               <Enlaces>Ubicacion</Enlaces>
