@@ -18,22 +18,24 @@ const Header = () => {
       } else{
             desplazamiento= offsetY;
       }
-      
+//-----------------------------------------------------------------------------------------------------//
       let posicionesIniciales={divTexto:"-100", enlace:"-100"};
       
       const contador = () => setInterval(() => {
             contadorFuncional();  
       }, 10);
       const contadorFuncional = () => {
-            if(posicionesIniciales.divTexto == 0){
+            if(posicionesIniciales.enlace === 0){
                   clearInterval(contador); 
             } else{
-                  posicionesIniciales.divTexto++;
-                  setAltura(posicionesIniciales.divTexto); 
+                  posicionesIniciales.enlace++;
+                  setAltura(posicionesIniciales.enlace);
             };     
       };
       
       const [altura, setAltura]= useState(-100);
+      const [altura2, setAltura2]= useState(-100);
+
       const handleAltura = () => setAltura(() =>{
             contador()}
       );
@@ -48,10 +50,10 @@ const Header = () => {
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
                         <Menu>
-                              <Enlaces style={{top:`${altura}px`}}>Acerca de </Enlaces>
-                              <Enlaces>Menu </Enlaces>
-                              <Enlaces>Galeria</Enlaces>
-                              <Enlaces>Ubicacion</Enlaces>
+                              <EnlaceAcerca style={{top:`${altura}px`}}>Acerca de </EnlaceAcerca>
+                              <EnlaceMenu style={{top:`${altura}px`}}>Menu </EnlaceMenu>
+                              <EnlaceGaleria style={{top:`${altura}px`}}>Galeria</EnlaceGaleria>
+                              <EnlaceUbicacion style={{top:`${altura}px`}}>Ubicacion</EnlaceUbicacion>
                         </Menu>
                         <Textos 
                               style={{transform:`translateY(${desplazamiento*0.5}px)`, top:``}} 
@@ -87,12 +89,13 @@ const Menu =styled.nav`
       width:100%;
       text-align:right;
 `
-const Enlaces = styled.a`
+const EnlaceAcerca = styled.a`
       color: #fff;
       font-size: 20px;
       font-weight: 100;
       display: inline-block;
       margin: 40px 20px;
+      top:-100px;
       text-decoration: none;
       position: relative; 
       &:hover{
@@ -100,6 +103,50 @@ const Enlaces = styled.a`
       }
 
 `
+const EnlaceMenu = styled.a`
+      color: #fff;
+      font-size: 20px;
+      font-weight: 100;
+      display: inline-block;
+      margin: 40px 20px;
+      top:-150px;
+      text-decoration: none;
+      position: relative; 
+      &:hover{
+            text-decoration: underline;
+      }
+
+`
+const EnlaceGaleria = styled.a`
+      color: #fff;
+      font-size: 20px;
+      font-weight: 100;
+      display: inline-block;
+      margin: 40px 20px;
+      top:-200px;
+      text-decoration: none;
+      position: relative; 
+      &:hover{
+            text-decoration: underline;
+      }
+
+`
+const EnlaceUbicacion = styled.a`
+      color: #fff;
+      font-size: 20px;
+      font-weight: 100;
+      display: inline-block;
+      margin: 40px 20px;
+      top:-250px;
+      text-decoration: none;
+      position: relative; 
+      &:hover{
+            text-decoration: underline;
+      }
+
+`
+
+
 
 const Textos = styled.div`
       width: 100%;
