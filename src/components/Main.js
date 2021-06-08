@@ -1,10 +1,10 @@
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState, useRef} from 'react';
 import styled from 'styled-components';
 import BgTextura from '../assets/bg-textura.png';
 import BgAcerca from '../assets/acerca-de.jpg';
 import PlatillosMenu from '../components/PlatillosMenu'
 
-const Main = ({platillosMenu}) => {
+const Main = ({platillosMenu, reference}) => {
 
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
@@ -25,7 +25,7 @@ const Main = ({platillosMenu}) => {
 
       return ( 
             <ContenedorMain image={BgTextura}>
-                  <AcercaDe>
+                  <AcercaDe ref={reference} >
                         <ContenedorAcercaDe>
                               <img  src={BgAcerca} alt={"sala de cafe"} />
                         </ContenedorAcercaDe>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import styled from 'styled-components';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -21,11 +21,19 @@ function App() {
 
   ];
 
+  const scrollTocomponent = (ref) => window.scroll({
+      top:ref.current.offsetTop,
+      left:0,
+      behavior:'smooth'
+    });
+  const ele1 = useRef();
+  const ele2 = useRef();
+
 
   return (
     <>
-      <Header />
-      <Main 
+      <Header reference={ele1} click={()=>scrollTocomponent(ele2)} />
+      <Main reference={ele2}
         platillosMenu={platillosMenu}
       />
       <Galeria />

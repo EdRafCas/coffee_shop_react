@@ -1,8 +1,8 @@
-import React,{useState, useEffect} from 'react';
-import styled from 'styled-components'
+import React,{useState, useEffect, useRef, forwardRef} from 'react';
+import styled from 'styled-components';
 import BgImage from '../assets/bg.jpg'
 
-const Header = () => {
+const Header = ({reference, click}) => {
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -84,13 +84,11 @@ const Header = () => {
       }, []);
 
 //------------------------------------------------------------------------------------------------------------------------------------------//
-      
-
       return ( 
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
                         <Menu>
-                              <Enlace style={{top:`${altura}px`}}>Acerca de </Enlace>
+                              <Enlace ref={reference} onClick={click} style={{top:`${altura}px`}}>Acerca de </Enlace>
                               <Enlace style={{top:`${altura2}px`}}>Menu </Enlace>
                               <Enlace style={{top:`${altura3}px`}}>Galeria</Enlace>
                               <Enlace style={{top:`${altura4}px`}}>Ubicacion</Enlace>
@@ -115,7 +113,7 @@ const ContenedorHeader = styled.header`
       background-attachment: fixed;
       background-position: center 0; 
       font-size: 30px;
-`;
+`
 
 const Contenedor =styled.div`
       position:relative;
