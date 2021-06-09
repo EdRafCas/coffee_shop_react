@@ -1,5 +1,4 @@
 import React,{useRef} from 'react';
-import styled from 'styled-components';
 import Header from './components/Header';
 import Main from './components/Main';
 import Galeria from './components/Galeria';
@@ -22,22 +21,34 @@ function App() {
   ];
 
   const scrollTocomponent = (ref) => window.scroll({
-      top:ref.current.offsetTop,
+      top: ref.current.offsetTop,
       left:0,
       behavior:'smooth'
     });
-  const ele1 = useRef();
-  const ele2 = useRef();
+  
+  const scrollAcerca = useRef();
+  const scrollMenu = useRef();
+  const scrollGaleria = useRef();
+  const scrollUbicacion = useRef();
+  
+
 
 
   return (
     <>
-      <Header reference={ele1} click={()=>scrollTocomponent(ele2)} />
-      <Main reference={ele2}
+      <Header 
+        clickAcerca={()=>scrollTocomponent(scrollAcerca)}
+        clickMenu={()=>scrollTocomponent(scrollMenu)}
+        clickGaleria={()=>scrollTocomponent(scrollGaleria)}
+        clickUbicacion={()=>scrollTocomponent(scrollUbicacion)}
+        />
+      <Main 
+        referenceAcerca={scrollAcerca}
+        referenceMenu={scrollMenu}
         platillosMenu={platillosMenu}
       />
-      <Galeria />
-      <Ubicacion />
+      <Galeria referenceGaleria={scrollGaleria}/>
+      <Ubicacion referenceUbicacion={scrollUbicacion}/>
       <Mapa/>
       <Footer />
     </>

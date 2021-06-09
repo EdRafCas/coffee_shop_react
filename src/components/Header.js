@@ -1,8 +1,8 @@
-import React,{useState, useEffect, useRef, forwardRef} from 'react';
+import React,{useState, useEffect} from 'react';
 import styled from 'styled-components';
 import BgImage from '../assets/bg.jpg'
 
-const Header = ({reference, click}) => {
+const Header = ({clickUbicacion, clickGaleria, clickMenu, clickAcerca}) => {
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -88,10 +88,10 @@ const Header = ({reference, click}) => {
            <ContenedorHeader image={BgImage}>
                  <Contenedor>
                         <Menu>
-                              <Enlace ref={reference} onClick={click} style={{top:`${altura}px`}}>Acerca de </Enlace>
-                              <Enlace style={{top:`${altura2}px`}}>Menu </Enlace>
-                              <Enlace style={{top:`${altura3}px`}}>Galeria</Enlace>
-                              <Enlace style={{top:`${altura4}px`}}>Ubicacion</Enlace>
+                              <Enlace onClick={clickAcerca} style={{top:`${altura}px`}}>Acerca de </Enlace>
+                              <Enlace onClick={clickMenu} style={{top:`${altura2}px`}}>Menu </Enlace>
+                              <Enlace onClick={clickGaleria} style={{top:`${altura3}px`}}>Galeria</Enlace>
+                              <Enlace onClick={clickUbicacion} style={{top:`${altura4}px`}}>Ubicacion</Enlace>
                         </Menu>
                         <Textos 
                               style={{transform:`translateY(${desplazamiento*0.5}px)`, top:`${altura5}px`, opacity:`${opacity/100}`}} 

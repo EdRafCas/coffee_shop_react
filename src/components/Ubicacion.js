@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const Ubicacion = () => {
+const Ubicacion = ({referenceUbicacion}) => {
       return ( 
             <Contenedor>
-                  <Titulo>Donde encontrarnos</Titulo>
+                  <Titulo ref={referenceUbicacion} >Donde encontrarnos</Titulo>
                   <ContenedorDireccion>
                         <Direccion>
                               <p>Zeballos 1189</p>

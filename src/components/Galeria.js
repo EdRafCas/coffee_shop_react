@@ -10,9 +10,9 @@ import Imagen7 from '../assets/7.jpg';
 import Imagen8 from '../assets/8.jpg';
 
 
-const Galeria = () => {
+const Galeria = ({referenceGaleria}) => {
       return ( 
-            <ContenedorGaleria>
+            <ContenedorGaleria ref={referenceGaleria}>
                   <ContenedorFoto>
                         <Foto src={Imagen1} alt={"imagen de muestra"}></Foto>
                   </ContenedorFoto>
