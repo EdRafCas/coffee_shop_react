@@ -11,8 +11,11 @@ const Main = ({platillosMenu, referenceAcerca, referenceMenu}) => {
 
       console.log(window.pageYOffset);
       useEffect(() => {
-            window.addEventListener('scroll', handleScroll);
-            return() => window.removeEventListener('scroll', handleScroll);
+            var windowWidth = window.innerWidth;
+            if (windowWidth >= 800){
+                  window.addEventListener('scroll', handleScroll);
+                  return() => window.removeEventListener('scroll', handleScroll);
+            }
       }, []);
 
       let desplazamiento="";
@@ -60,20 +63,25 @@ const AcercaDe=styled.section`
       width:90%;
       max-width:1000px;
       margin: auto;
+      overflow: visible;
+      position: relative;
       
 `
 
 const ContenedorAcercaDe=styled.div`
       max-width: 1000px;
-      margin: auto;
       overflow: visible;
       position: relative;
-      img{
-            margin-top: -50px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
-            width: 80%;
-            position: absolute;
-
+      margin-top: -50px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
+      position: absolute;
+            img{
+                  vertical align: top;
+                  width:100%;         
+      }
+      @media(max-width:800px) {
+            position: relative
+            width:100%;
       }
 `
 const Cartel=styled.article`
@@ -94,7 +102,11 @@ const Cartel=styled.article`
             line-height: 28px;
             margin-bottom: 15px; }
       }
-
+      @media(max-width:800px) {
+            width:100%;
+            position:relative;
+            margin-top:-50px;
+      }
 `
 
 const Menu=styled.section`

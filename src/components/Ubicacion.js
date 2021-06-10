@@ -7,11 +7,11 @@ const Ubicacion = ({referenceUbicacion}) => {
                   <Titulo ref={referenceUbicacion} >Donde encontrarnos</Titulo>
                   <ContenedorDireccion>
                         <Direccion>
-                              <p>Zeballos 1189</p>
+                              <p>PelleGrini</p>
                               <p>Rosario, Santa fe</p>
                               <br/>
 
-                              <p>+541197551892 </p>
+                              <p>+54---------- </p>
                               <p>Correo de muestra</p>
                         </Direccion>
                         <Horarios>
@@ -33,7 +33,6 @@ const Ubicacion = ({referenceUbicacion}) => {
 
 const Contenedor=styled.div`
       width:80%;
-      max-width:1000px;
       margin:auto;  
       padding-bottom: 50px;
       padding-top: 50px    

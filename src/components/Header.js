@@ -3,13 +3,18 @@ import styled from 'styled-components';
 import BgImage from '../assets/bg.jpg'
 
 const Header = ({clickUbicacion, clickGaleria, clickMenu, clickAcerca}) => {
+
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
 
       console.log(window.pageYOffset);
+          
       useEffect(() => {
-            window.addEventListener('scroll', handleScroll);
-            return() => window.removeEventListener('scroll', handleScroll);
+            var windowWidth = window.innerWidth;
+            if (windowWidth >= 800){
+                  window.addEventListener('scroll', handleScroll);
+                  return() => window.removeEventListener('scroll', handleScroll);
+            }
       }, []);
 
       let desplazamiento="";
@@ -67,19 +72,24 @@ const Header = ({clickUbicacion, clickGaleria, clickMenu, clickAcerca}) => {
 
       };
       
-      const [altura, setAltura]= useState(-100);
-      const [altura2, setAltura2]= useState(-150);
-      const [altura3, setAltura3]= useState(-200);
-      const [altura4, setAltura4]= useState(-250);
-      const [altura5, setAltura5]= useState(350);
+      const [altura, setAltura]= useState(0);
+      const [altura2, setAltura2]= useState(0);
+      const [altura3, setAltura3]= useState(0);
+      const [altura4, setAltura4]= useState(0);
+      const [altura5, setAltura5]= useState("");
       const [opacity, setopacity]= useState(0);
 
       const handleAltura = () => setAltura(() =>{
             contador()}
       );
       useEffect(()=>{
-            window.addEventListener('load', handleAltura);
-            return() => window.removeEventListener("load", handleAltura);
+            if(window.innerWidth >= 800) {
+                  window.addEventListener('load', handleAltura);
+                  return() => window.removeEventListener("load", handleAltura);
+            } else{
+                  setopacity(opacity+100);
+            }
+            
            
       }, []);
 
@@ -113,6 +123,11 @@ const ContenedorHeader = styled.header`
       background-attachment: fixed;
       background-position: center 0; 
       font-size: 30px;
+      @media(max-width:800px) {
+            position: static;
+            height: auto;
+      }
+      
 `
 
 const Contenedor =styled.div`
@@ -122,11 +137,19 @@ const Contenedor =styled.div`
       max-width: 1000px;
       margin: auto;
       overflow: hidden;
+      @media(max-width:800px) {
+            position: static;
+            height: auto;
+      }
 `
 
 const Menu =styled.nav`
       width:100%;
       text-align:right;
+      @media(max-width:800px) {
+            position: static;
+            text-align:center;
+      }
 `
 const Enlace= styled.a`
       color: #fff;
@@ -139,6 +162,9 @@ const Enlace= styled.a`
       &:hover{
             text-decoration: underline;
       }
+      @media(max-width:800px) {
+            margin: 10px 20px;
+      }
 `
 const Textos = styled.div`
       width: 100%;
@@ -146,21 +172,30 @@ const Textos = styled.div`
       position:absolute;
       top: 50%;  
       margin-top:48px;
-      opacity: 0; 
+      opacity: 1; 
+      @media(max-width:800px) {
+            position: static;
+            margin: 100px 0;
+      }
 `
 const Nombre =styled.h1`
       display:inline-block;
       font-size: 50px;
       font-weight: 600;
       margin: auto;
+      @media(max-width:800px) {
+            font-size:30px;
+      }
 `
 
 const Eduardo = styled.h1`
       display: inline-block;
       font-size: 50px;
       font-weight: 300;
-      margin-left:20 px;
-      margin-left: 20px
+      margin-left:20px;
+
+      @media(max-width:800px) {
+            font-size:30px;
 `
 
 const Titulo = styled.h3`

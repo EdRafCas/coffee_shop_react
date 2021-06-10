@@ -10,8 +10,8 @@ const PlatillosMenu = ({platillosMenu}) => {
                                     <Platillo key={index}>
                                           <Nombre>{platillo.nombre}</Nombre>
                                           <Precio>{platillo.precio}</Precio>
-                                          <Descripcion>Breve descripcion</Descripcion>
-                                          <Boton>Agregar al carrito</Boton>
+                                          <Descripcion>   lorem25    </Descripcion>
+                                          {/* <Boton>Agregar al carrito</Boton> */}
                                     </Platillo>
                               );
                         })}     

@@ -17,7 +17,6 @@ const PiedePagina=styled.footer`
       background: #000;
 `
 const Contenedor=styled.div`
-      width:1000px;
       margin:auto;
       text-align:center; 
       color:#fff;
