@@ -27,6 +27,10 @@ const ContenedorDePlatillos = styled.div`
       gap: 20px;
       padding: 20px 0;
       box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.1);
+      @media(max-width:800px) {
+            grid-template-columns: repeat(1, 1fr); 
+            gap: 0px;         
+      }
 `
 const Platillo =styled.div`
       margin-bottom:30px;

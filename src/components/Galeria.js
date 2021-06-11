@@ -48,6 +48,9 @@ const ContenedorGaleria=styled.div`
       grid-template-columns: repeat(4, 1fr);
       gap: 0px;
       box-shadow: 0px 0px 5px rgba(129, 129, 129, 0.1);
+      @media(max-width:800px) {
+            grid-template-columns: repeat(2, 1fr);          
+      }
 `
 
 const ContenedorFoto = styled.div`
@@ -65,6 +68,7 @@ const Foto=styled.img`
             -o-transition:all .3s ease;
             transition:all .3s ease;
       }
+      
 `
 
 export default Galeria;

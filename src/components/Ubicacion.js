@@ -43,13 +43,21 @@ const Titulo=styled.h3`
       margin:auto;
       text-align: center;
       padding-bottom:20px;
+      @media(max-width:800px) {
+            font-size:30px;        
+      }
 
 `
 
 const ContenedorDireccion=styled.div`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap:20px
+      gap:20px;
+      @media(max-width:800px) {
+            grid-template-columns: repeat(1, 1fr); 
+            text-align: center;
+            gap:0px;         
+      }
 `
 const Direccion=styled.div`
       padding:20px;
@@ -62,6 +70,12 @@ const Horarios=styled.div`
       grid-column:span 1;
       display:grid;
       grid-template-columns: repeat(2, 1fr);
+      width:100%;
+      @media(max-width:800px) {
+            grid-template-columns: repeat(1, 1fr); 
+            align-items:center;
+                     
+      }
       `
 
 const ContenedorHorarios=styled.div`
@@ -69,6 +83,11 @@ const ContenedorHorarios=styled.div`
       text-align: center;
       p{
             font-size:20px;
+      }
+      @media(max-width:800px) {
+            grid-template-columns: repeat(1, 1fr);
+            text-align: center;
+                     
       }
 
 `
