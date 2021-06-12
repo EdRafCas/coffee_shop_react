@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 function App() {
    //need to remove this to firebase
+   //like reeeeally need to
   const platillosMenu = [
     {id:1, nombre: "Plato 1", precio: "10$"},
     {id:2, nombre: "Plato 2", precio: "20$"},
