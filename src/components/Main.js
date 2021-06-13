@@ -2,9 +2,9 @@ import React,{useEffect, useState} from 'react';
 import styled from 'styled-components';
 import BgTextura from '../assets/bg-textura.png';
 import BgAcerca from '../assets/acerca-de.jpg';
-import PlatillosMenu from '../components/PlatillosMenu'
+import PlatillosMenu from './PlatillosMenu'
 
-const Main = ({platillosMenu, referenceAcerca, referenceMenu}) => {
+const Main = ({referenceAcerca, referenceMenu}) => {
 
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
@@ -42,9 +42,7 @@ const Main = ({platillosMenu, referenceAcerca, referenceMenu}) => {
                         <TituloMenu ref={referenceMenu}> Menu</TituloMenu>
                         <ContenedorExternoMenu>
                               <ContenedorInternoMenu>
-                                    <PlatillosMenu 
-                                          platillosMenu={platillosMenu} 
-                                    />
+                                    <PlatillosMenu />
                               </ContenedorInternoMenu>    
                         </ContenedorExternoMenu>
                   </Menu>
