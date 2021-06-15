@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import db from './../firebase/firebaseConfig'
 
 
 
 const PlatillosMenu = () => {
-      const platillosDeMenu = [
+      const [platillosMenu, cambiarPlatillosMenu]= useState([
             {id:1, nombre: "Plato 1", precio: "10$"},
             {id:2, nombre: "Plato 2", precio: "20$"},
             {id:3, nombre: "Plato 3", precio: "30$"},
@@ -13,18 +13,27 @@ const PlatillosMenu = () => {
             {id:5, nombre: "Plato 5", precio: "70$"},
             {id:6, nombre: "Plato 6", precio: "50$"},
             {id:7, nombre: "Plato 7", precio: "60$"},
-            {id:8, nombre: "Plato 8", precio: "80$"}  
-      ];
-      
+            {id:8, nombre: "Plato 8", precio: "80$"}       
+      ]);
+
+      useEffect(()=>{
+            db.collection('platillos').limit(6).onSnapshot((snapshot)=>{
+                  cambiarPlatillosMenu(snapshot.docs.map( (documento)=>{
+                        return{...documento.data(), id:documento.id}
+                  }));
+            });
+      }, []);
+     
+
       return ( 
             <div>
                   <ContenedorDePlatillos>
-                        {platillosDeMenu.map((platillo, index)=>{
+                        {platillosMenu.map((platillo, index)=>{
                               return(
                                     <Platillo key={index}>
                                           <Nombre>{platillo.nombre}</Nombre>
                                           <Precio>{platillo.precio}</Precio>
-                                          <Descripcion>   lorem25    </Descripcion>
+                                          <Descripcion>   Lorem ipsum dolor sit amet.    </Descripcion>
                                           {/* <Boton>Agregar al carrito</Boton> */}
                                     </Platillo>
                               );

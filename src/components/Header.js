@@ -7,8 +7,7 @@ const Header = ({clickUbicacion, clickGaleria, clickMenu, clickAcerca}) => {
       const [offsetY, setOffsetY] =useState(0);
       const handleScroll = () => setOffsetY(window.pageYOffset);
 
-      console.log(window.pageYOffset);
-          
+      
       useEffect(() => {
             var windowWidth = window.innerWidth;
             if (windowWidth >= 800){
