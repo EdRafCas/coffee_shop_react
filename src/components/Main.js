@@ -68,17 +68,16 @@ const AcercaDe=styled.section`
 
 const ContenedorAcercaDe=styled.div`
       max-width: 1000px;
-      overflow: visible;
-      position: relative;
       margin-top: -50px;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
       position: absolute;
+      z-index: 1;
             img{
-                  vertical align: top;
+                  vertical-align: top;
                   width:100%;         
       }
       @media(max-width:800px) {
-            position: relative
+            position: relative;
             width:100%;
       }
 `
@@ -87,7 +86,6 @@ const Cartel=styled.article`
       padding: 40px;
       width: 50%;
       position: relative;
-      top: 200px;
       z-index: 1;
       box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.35);
       float: right;
@@ -103,7 +101,6 @@ const Cartel=styled.article`
       @media(max-width:800px) {
             width:100%;
             position:relative;
-            margin-top:-50px;
       }
 `
 
