@@ -5,6 +5,8 @@ import Galeria from './components/Galeria';
 import Ubicacion from './components/Ubicacion';
 import Mapa from './components/Mapa';
 import Footer from './components/Footer';
+import {Helmet} from 'react-helmet';
+import Favicon from './assets/1.jpg';
 
 function App() {
   
@@ -18,12 +20,12 @@ function App() {
   const scrollMenu = useRef();
   const scrollGaleria = useRef();
   const scrollUbicacion = useRef();
-  
-
-
 
   return (
     <>
+      <Helmet>
+        <title>Ed, Coffee & React</title>
+      </Helmet>
       <Header 
         clickAcerca={()=>scrollTocomponent(scrollAcerca)}
         clickMenu={()=>scrollTocomponent(scrollMenu)}
